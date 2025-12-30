@@ -1,1 +1,41 @@
-Reistration Form
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic Form</title>
+    <style>
+        /* Essential styles only */
+        body { font-family: sans-serif; background: #eee; padding: 50px; }
+        .box { background: white; padding: 20px; max-width: 300px; margin: auto; border: 1px solid #ccc; }
+        input { width: 100%; margin-bottom: 10px; display: block; }
+        #msg { display: none; color: green; text-align: center; }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <div id="formContent">
+        <h2>Register</h2>
+        <form id="regForm">
+            <input type="text" placeholder="Username" required>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit" style="width: 100%;">Sign Up</button>
+        </form>
+    </div>
+
+    <div id="msg">
+        <h3>Success!</h3>
+        <p>You are registered.</p>
+    </div>
+</div>
+
+<script>
+    document.getElementById('regForm').onsubmit = function(e) {
+        e.preventDefault();
+        document.getElementById('formContent').style.display = 'none';
+        document.getElementById('msg').style.display = 'block';
+    };
+</script>
+
+</body>
+</html>
